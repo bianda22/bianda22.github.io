@@ -100,15 +100,17 @@ var map = new ol.Map({
     overlays: [overlayPopup],
     layers: layersList,
     view: new ol.View({
-         maxZoom: 28, minZoom: 1, projection: new ol.proj.Projection({
-            code: 'EPSG:4034',
+        extent: [-2.719501, -1.810660, 30.461068, 16.151262], maxZoom: 28, minZoom: 1, projection: new ol.proj.Projection({
+            code: 'EPSG:4326',
             extent: [-20037508.342789, -20037508.342789, 20037508.342789, 20037508.342789],
             units: 'degrees'})
     })
 });
 
+var layerSwitcher = new ol.control.LayerSwitcher({tipLabel: "Layers"});
+map.addControl(layerSwitcher);
 
-map.getView().fit([-2.992190, -5.381291, 31.823315, 13.465685], map.getSize());
+map.getView().fit([-2.719501, -1.810660, 30.461068, 16.151262], map.getSize());
 
 var NO_POPUP = 0
 var ALL_FIELDS = 1

@@ -102,14 +102,27 @@
         }
         </style>
         <style>
-          h1{ text-align: center;
+          h1{text-align: center;
           }
         </style>
-        <title>Région EST</title>
-        <h1>Les départements de la région de l'EST</h1>
+        <title>Domaine permanent</title>
+        <h1>Domaine Forestier Permanent du Cameroun</h1>
     </head>
     <body>
-      <p>La région de l'Est est l'une des dix régions du Cameroun2, située dans le Sud-Est du pays. Son chef-lieu est Bertoua. La majorité de son territoire est couvert de forêt de type équatoriale. Elle est bordée par les régions du Sud, de l'Adamaoua et du Centre.</p>
+      <p>La forêt du Cameroun est le deuxième massif forestier le plus important d'Afrique après celui de la République Démocratique du Congo (RDC). Soit environ 22,5 millions d'hectares. Elle occupe le cinquième rang africain du point de vue de la diversité biologique.
+
+
+        Employé derrière une débardeuse
+        
+        Grumier près d'Éséka.
+        Dans les années 2000, le secteur forestier représentait le deuxième poste d’exportation, après le pétrole. Il emploie plus de 45 000 personnes et représente plus de 7 % du PIB.
+        Depuis 15 ans, le Cameroun s’est engagé dans une démarche très sérieuse vers l’exploitation responsable, la préservation de la biodiversité et la transformation locale. Ainsi le régime des licences a été remplacé par celui des unités forestières d'aménagement (UFA) attribuées pour 30 ans. Ce qui permet aux entreprises bénéficiaires de faire des investissements plus lourds et de participer à la gestion durable.
+
+        L'exploitation forestière des UFA est basée sur le principe d'un prélèvement sélectif : chaque année, la coupe ne doit pas excéder un trentième de la surface boisée de l'UFA, et l'exploitant est tenu de sélectionner les arbres à couper en fonction d'un diamètre minimum du tronc. Ce diamètre minimum varie en fonction des espèces d'arbres1.
+        
+        À côté du régime des UFA, le gouvernement a également mis en place le régime des forêts communautaires et les forêts communales pour permettre aux communautés villageoises d'exploiter elles-mêmes les forêts qui sont sur leur territoire. Cette exploitation, qui se fait souvent en partenariat avec des entreprises privées, donne néanmoins lieu à beaucoup de dérives.[réf. souhaitée]
+        
+        Tous les régimes reposent sur la validation du plan d’aménagement après inventaire. De manière globale, cela a permis d’améliorer la gestion de la forêt au Cameroun avec notamment la certification de très nombreux exploitants (FSC, OLB, TLTV) avec ce qu’elle implique comme contraintes dans la traçabilité du bois et les investissements à consentir sur le plan social interne (au bénéfice des employés) et externe (au bénéfice des villages riverains).</p>
         <div id="map">
             <div id="popup" class="ol-popup">
                 <a href="#" id="popup-closer" class="ol-popup-closer"></a>
@@ -118,13 +131,13 @@
         </div>
         <script src="resources/qgis2web_expressions.js"></script>
 <script src="resources/proj4.js"></script>
-        <script>proj4.defs('EPSG:4034','+proj=longlat +a=6378249.14480801 +b=6356514.96620413 +no_defs');</script>
+        <script>proj4.defs('EPSG:4326','+proj=longlat +datum=WGS84 +no_defs');</script>
         <script src="resources/polyfills.js"></script>
         <script src="./resources/functions.js"></script>
         <script src="./resources/ol.js"></script>
         <script src="./resources/ol-layerswitcher.js"></script>
-        <script src="layers/dptmts_EST_1.js"></script>
-        <script src="styles/dptmts_EST_1_style.js"></script>
+        <script src="layers/limites_1.js"></script><script src="layers/permanent_2.js"></script>
+        <script src="styles/limites_1_style.js"></script><script src="styles/permanent_2_style.js"></script>
         <script src="./layers/layers.js" type="text/javascript"></script> 
         <script src="./resources/Autolinker.min.js"></script>
         <script src="./resources/qgis2web.js"></script>

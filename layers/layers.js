@@ -1,5 +1,5 @@
 ol.proj.proj4.register(proj4);
-ol.proj.get("EPSG:4034").setExtent([-2.992190, -5.381291, 31.823315, 13.465685]);
+ol.proj.get("EPSG:4326").setExtent([-2.719501, -1.810660, 30.461068, 16.151262]);
 var wms_layers = [];
 
 
@@ -14,26 +14,43 @@ var wms_layers = [];
                 url: 'http://tile.openstreetmap.org/{z}/{x}/{y}.png'
             })
         });
-var format_dptmts_EST_1 = new ol.format.GeoJSON();
-var features_dptmts_EST_1 = format_dptmts_EST_1.readFeatures(json_dptmts_EST_1, 
-            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:4034'});
-var jsonSource_dptmts_EST_1 = new ol.source.Vector({
+var format_limites_1 = new ol.format.GeoJSON();
+var features_limites_1 = format_limites_1.readFeatures(json_limites_1, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:4326'});
+var jsonSource_limites_1 = new ol.source.Vector({
     attributions: ' ',
 });
-jsonSource_dptmts_EST_1.addFeatures(features_dptmts_EST_1);
-var lyr_dptmts_EST_1 = new ol.layer.Vector({
+jsonSource_limites_1.addFeatures(features_limites_1);
+var lyr_limites_1 = new ol.layer.Vector({
                 declutter: true,
-                source:jsonSource_dptmts_EST_1, 
-                style: style_dptmts_EST_1,
+                source:jsonSource_limites_1, 
+                style: style_limites_1,
                 interactive: true,
-                title: '<img src="styles/legend/dptmts_EST_1.png" /> dptmts_EST'
+                title: '<img src="styles/legend/limites_1.png" /> limites'
+            });
+var format_permanent_2 = new ol.format.GeoJSON();
+var features_permanent_2 = format_permanent_2.readFeatures(json_permanent_2, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:4326'});
+var jsonSource_permanent_2 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_permanent_2.addFeatures(features_permanent_2);
+var lyr_permanent_2 = new ol.layer.Vector({
+                declutter: true,
+                source:jsonSource_permanent_2, 
+                style: style_permanent_2,
+                interactive: true,
+                title: '<img src="styles/legend/permanent_2.png" /> permanent'
             });
 
-lyr_OSMStandard_0.setVisible(true);lyr_dptmts_EST_1.setVisible(true);
-var layersList = [lyr_OSMStandard_0,lyr_dptmts_EST_1];
-lyr_dptmts_EST_1.set('fieldAliases', {'OBJECTID': 'OBJECTID', 'FID_region': 'FID_region', 'type_': 'type_', 'desc_type': 'desc_type', 'nom_reg': 'nom_reg', 'code_reg': 'code_reg', 'population': 'population', 'sup_adm_ha': 'sup_adm_ha', 'sup_sig_ha': 'sup_sig_ha', 'last_edite': 'last_edite', 'last_edi_1': 'last_edi_1', 'created_us': 'created_us', 'created_da': 'created_da', 'FID_depart': 'FID_depart', 'type1': 'type1', 'desc_type_': 'desc_type_', 'nom_dep': 'nom_dep', 'nom_reg_1': 'nom_reg_1', 'code_dep': 'code_dep', 'populati_1': 'populati_1', 'sup_adm__1': 'sup_adm__1', 'last_edi_2': 'last_edi_2', 'sup_sig__1': 'sup_sig__1', 'created__1': 'created__1', 'created__2': 'created__2', 'last_edi_3': 'last_edi_3', 'shape_Leng': 'shape_Leng', 'shape_Area': 'shape_Area', });
-lyr_dptmts_EST_1.set('fieldImages', {'OBJECTID': 'TextEdit', 'FID_region': 'TextEdit', 'type_': 'TextEdit', 'desc_type': 'TextEdit', 'nom_reg': 'TextEdit', 'code_reg': 'TextEdit', 'population': 'TextEdit', 'sup_adm_ha': 'TextEdit', 'sup_sig_ha': 'TextEdit', 'last_edite': 'TextEdit', 'last_edi_1': 'DateTime', 'created_us': 'TextEdit', 'created_da': 'DateTime', 'FID_depart': 'TextEdit', 'type1': 'TextEdit', 'desc_type_': 'TextEdit', 'nom_dep': 'TextEdit', 'nom_reg_1': 'TextEdit', 'code_dep': 'TextEdit', 'populati_1': 'TextEdit', 'sup_adm__1': 'TextEdit', 'last_edi_2': 'DateTime', 'sup_sig__1': 'TextEdit', 'created__1': 'TextEdit', 'created__2': 'DateTime', 'last_edi_3': 'TextEdit', 'shape_Leng': 'TextEdit', 'shape_Area': 'TextEdit', });
-lyr_dptmts_EST_1.set('fieldLabels', {'OBJECTID': 'no label', 'FID_region': 'no label', 'type_': 'no label', 'desc_type': 'no label', 'nom_reg': 'no label', 'code_reg': 'no label', 'population': 'no label', 'sup_adm_ha': 'no label', 'sup_sig_ha': 'no label', 'last_edite': 'no label', 'last_edi_1': 'no label', 'created_us': 'no label', 'created_da': 'no label', 'FID_depart': 'no label', 'type1': 'no label', 'desc_type_': 'no label', 'nom_dep': 'inline label', 'nom_reg_1': 'no label', 'code_dep': 'no label', 'populati_1': 'no label', 'sup_adm__1': 'no label', 'last_edi_2': 'no label', 'sup_sig__1': 'no label', 'created__1': 'no label', 'created__2': 'no label', 'last_edi_3': 'no label', 'shape_Leng': 'no label', 'shape_Area': 'no label', });
-lyr_dptmts_EST_1.on('precompose', function(evt) {
+lyr_OSMStandard_0.setVisible(true);lyr_limites_1.setVisible(true);lyr_permanent_2.setVisible(true);
+var layersList = [lyr_OSMStandard_0,lyr_limites_1,lyr_permanent_2];
+lyr_limites_1.set('fieldAliases', {'OBJECTID': 'OBJECTID', 'SCE_GEO': 'SCE_GEO', 'SCE_SEM': 'SCE_SEM', 'DATE_': 'DATE_', 'ORIGINE': 'ORIGINE', 'NOM': 'NOM', 'SUPERFICIE': 'SUPERFICIE', 'Shape_Leng': 'Shape_Leng', 'Shape_Area': 'Shape_Area', 'NAME': 'NAME', });
+lyr_permanent_2.set('fieldAliases', {'OBJECTID_1': 'OBJECTID_1', 'INDICATIF': 'INDICATIF', 'AFF_CODE': 'AFF_CODE', 'TOPONYME': 'TOPONYME', 'N_CONCESSI': 'N_CONCESSI', 'SUP_SIG': 'SUP_SIG', 'BUREAU_CER': 'BUREAU_CER', 'WOOD_VOL06': 'WOOD_VOL06', 'WOOD_VOL07': 'WOOD_VOL07', 'WOOD_VOL08': 'WOOD_VOL08', 'RFA_HA': 'RFA_HA', 'VALIDITE': 'VALIDITE', 'ATTRIBUTAI': 'ATTRIBUTAI', 'DATE_ATTRI': 'DATE_ATTRI', 'EXPLOITANT': 'EXPLOITANT', 'GROUPE_PAR': 'GROUPE_PAR', 'PROVINCE': 'PROVINCE', 'DEPARTEMEN': 'DEPARTEMEN', 'COMMUNE': 'COMMUNE', 'SUP_PROVIS': 'SUP_PROVIS', 'CLASSEMENT': 'CLASSEMENT', 'DATE_CLASS': 'DATE_CLASS', 'REF_CLASSE': 'REF_CLASSE', 'SUP_DEFINI': 'SUP_DEFINI', 'PLAN_AMGMT': 'PLAN_AMGMT', 'DATE_APPRO': 'DATE_APPRO', 'REF_APPRO': 'REF_APPRO', 'Observatio': 'Observatio', 'Certif_FM': 'Certif_FM', 'Certif_CW': 'Certif_CW', 'Certif_leg': 'Certif_leg', 'Date_FM': 'Date_FM', 'Date_CW': 'Date_CW', 'Date_Legal': 'Date_Legal', 'STATUT': 'STATUT', 'Shape_Leng': 'Shape_Leng', 'Shape_Area': 'Shape_Area', });
+lyr_limites_1.set('fieldImages', {'OBJECTID': 'Range', 'SCE_GEO': 'TextEdit', 'SCE_SEM': 'TextEdit', 'DATE_': 'DateTime', 'ORIGINE': 'TextEdit', 'NOM': 'TextEdit', 'SUPERFICIE': 'TextEdit', 'Shape_Leng': 'TextEdit', 'Shape_Area': 'TextEdit', 'NAME': 'TextEdit', });
+lyr_permanent_2.set('fieldImages', {'OBJECTID_1': 'Range', 'INDICATIF': 'TextEdit', 'AFF_CODE': 'TextEdit', 'TOPONYME': 'TextEdit', 'N_CONCESSI': 'TextEdit', 'SUP_SIG': 'TextEdit', 'BUREAU_CER': 'TextEdit', 'WOOD_VOL06': 'TextEdit', 'WOOD_VOL07': 'TextEdit', 'WOOD_VOL08': 'TextEdit', 'RFA_HA': 'TextEdit', 'VALIDITE': 'TextEdit', 'ATTRIBUTAI': 'TextEdit', 'DATE_ATTRI': 'TextEdit', 'EXPLOITANT': 'TextEdit', 'GROUPE_PAR': 'TextEdit', 'PROVINCE': 'TextEdit', 'DEPARTEMEN': 'TextEdit', 'COMMUNE': 'TextEdit', 'SUP_PROVIS': 'TextEdit', 'CLASSEMENT': 'TextEdit', 'DATE_CLASS': 'TextEdit', 'REF_CLASSE': 'TextEdit', 'SUP_DEFINI': 'TextEdit', 'PLAN_AMGMT': 'TextEdit', 'DATE_APPRO': 'TextEdit', 'REF_APPRO': 'TextEdit', 'Observatio': 'TextEdit', 'Certif_FM': 'TextEdit', 'Certif_CW': 'TextEdit', 'Certif_leg': 'TextEdit', 'Date_FM': 'TextEdit', 'Date_CW': 'TextEdit', 'Date_Legal': 'TextEdit', 'STATUT': 'TextEdit', 'Shape_Leng': 'TextEdit', 'Shape_Area': 'TextEdit', });
+lyr_limites_1.set('fieldLabels', {'OBJECTID': 'no label', 'SCE_GEO': 'no label', 'SCE_SEM': 'no label', 'DATE_': 'no label', 'ORIGINE': 'no label', 'NOM': 'inline label', 'SUPERFICIE': 'no label', 'Shape_Leng': 'no label', 'Shape_Area': 'no label', 'NAME': 'no label', });
+lyr_permanent_2.set('fieldLabels', {'OBJECTID_1': 'no label', 'INDICATIF': 'no label', 'AFF_CODE': 'no label', 'TOPONYME': 'no label', 'N_CONCESSI': 'no label', 'SUP_SIG': 'no label', 'BUREAU_CER': 'inline label', 'WOOD_VOL06': 'no label', 'WOOD_VOL07': 'no label', 'WOOD_VOL08': 'no label', 'RFA_HA': 'no label', 'VALIDITE': 'no label', 'ATTRIBUTAI': 'no label', 'DATE_ATTRI': 'no label', 'EXPLOITANT': 'no label', 'GROUPE_PAR': 'no label', 'PROVINCE': 'no label', 'DEPARTEMEN': 'no label', 'COMMUNE': 'no label', 'SUP_PROVIS': 'no label', 'CLASSEMENT': 'no label', 'DATE_CLASS': 'no label', 'REF_CLASSE': 'no label', 'SUP_DEFINI': 'no label', 'PLAN_AMGMT': 'no label', 'DATE_APPRO': 'no label', 'REF_APPRO': 'no label', 'Observatio': 'no label', 'Certif_FM': 'no label', 'Certif_CW': 'no label', 'Certif_leg': 'no label', 'Date_FM': 'no label', 'Date_CW': 'no label', 'Date_Legal': 'no label', 'STATUT': 'no label', 'Shape_Leng': 'no label', 'Shape_Area': 'no label', });
+lyr_permanent_2.on('precompose', function(evt) {
     evt.context.globalCompositeOperation = 'normal';
 });
